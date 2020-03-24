@@ -14,16 +14,17 @@ solve if you write the function you give to filter OUTSIDE filterOnPrice.
 * Your best bet is to directly write an anonymous function inside filter's parentheses
 (it may be an arrow function, but it doesn't have to)
 
-Sample arguments, i.e. INPUTS:
-  1. array of products:
+const sample = 
       [
         { name: 'iPhone X', price: 1159 },
         { name: 'Xiaomi Mi A2', price: 209 },
         { name: 'Samsung Galaxy Note 9', price: 992 },
         { name: 'Huawei P20', price: 480 },
         { name: 'Huawei P20 Pro', price: 649 }
-      ]
-  2. maximum price: 500
+      ];
+
+const maximumPrice = 500 ;
+
 
 Expected OUTPUT for these sample arguments:
   [
@@ -33,7 +34,17 @@ Expected OUTPUT for these sample arguments:
 */
 
 function filterOnPrice(products, maxPrice) {
+  var newArrey = [] ;
+  var i = 0 ;
+  products.map(phone => { 
+    if(phone['price'] < maxPrice){
+      newArrey[i] = phone ;
+      i++ ;
+    }
+  })
+  return newArrey ;
 }
+
 
 // DON'T TOUCH THIS!
 module.exports = filterOnPrice;

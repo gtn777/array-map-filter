@@ -7,27 +7,35 @@
   you must return "STR contains N characters" as an output
 * As usual: FIRST OF ALL, focus on writing the function that processes ONE string...
   Then you only need to use this function with map.
-
-Sample INPUT array (strings) for getStringsLength:
+*/
+const sample = 
   [
     'Chicken',
     'Bacon',
     'Tofu',
     'Mayonnaise'
-  ]
+  ];
 
-Expected OUTPUT for this sample array:
+/*Expected OUTPUT for this sample array:
   [
     'Chicken contains 7 characters',
     'Bacon contains 5 characters',
     'Tofu contains 4 characters',
     'Mayonnaise contains 10 characters'
-  ]
+  ]*/
 
-*/
+
 
 function getStringsLength(strings) {
+  let newArrey = [];
+  let i = 0;
+  strings.map(function(word){
+    newArrey[i] = word + " contains " + word.length + " characters" ;
+    i++ ;
+  })
+  return newArrey ;
 }
+console.log(getStringsLength(sample));
 
 // If you need, you can always visualize the result with a console.log.
 // In that case, uncomment the line below (you can also add your own

@@ -9,8 +9,9 @@ WAIT, WAIT, there's a little more you need to know! There are different ways to 
 function you'll give as a parameter to filter. You will probably need ONE of these:
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+*/
 
-Sample names array, i.e. INPUT:
+const sample = 
   [
     'Bran Stark',
     'Cersei Lannister',
@@ -18,15 +19,26 @@ Sample names array, i.e. INPUT:
     'Arya Stark',
     'Yara Greyjoy',
     'Sansa Stark'
-  ]
+  ];
 
+const keepStarks = function(argArray){
+  let outArrey = [] ;
+  let i = 0 ;
+  argArray.map(item => {
+    if(item.endsWith('Stark')){
+      outArrey[i]=item ;
+      i++;
+    }
+  })
+  return outArrey ;  
+}
+
+/*
 Expected OUTPUT for this sample:
   ['Bran Stark', 'Arya Stark', 'Sansa Stark']
 
 */
 
-function keepStarks(names) {
-}
 
 // DON'T TOUCH THIS!
 module.exports = keepStarks;

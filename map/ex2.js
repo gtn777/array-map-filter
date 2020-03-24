@@ -11,8 +11,8 @@
     * "FOOD is suitable for vegetarians" if the `isVegetarian` attribute is true
     * "FOOD is not suitable for vegetarians" if the `isVegetarian` attribute is false
     (replace FOOD with the `food` attribute)
-
-Sample foods array, i.e. INPUT:
+*/
+const sample =
   [
     {
       food: 'Bacon',
@@ -30,8 +30,20 @@ Sample foods array, i.e. INPUT:
       food: 'Chick Pea',
       isVegetarian: true
     }
-  ]
+  ];
 
+  function getFoodCategories(foods) {
+    const outArray = [];
+    let i = 0;
+    foods.map(function(obj){
+      outArray[i] = obj['food'] + (obj['isVegetarian'] ? " is" : " is not") + " suitable for vegetarians"  ;
+      i++ ;
+    })
+    return outArray ;
+}
+
+console.log(getFoodCategories(sample));
+/*
 Expected OUTPUT for this sample
   [
     'Bacon is not suitable for vegetarians',
@@ -39,11 +51,7 @@ Expected OUTPUT for this sample
     'Tofu is suitable for vegetarians',
     'Chick Pea is suitable for vegetarians'
   ]
-
 */
-
-function getFoodCategories(foods) {
-}
 
 
 

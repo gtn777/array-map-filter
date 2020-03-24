@@ -37,7 +37,7 @@ function filterOnPrice(products, maxPrice) {
   var newArrey = [] ;
   var i = 0 ;
   products.map(phone => { 
-    if(phone['price'] < maxPrice){
+    if(phone['price'] <= maxPrice){
       newArrey[i] = phone ;
       i++ ;
     }
